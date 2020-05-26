@@ -1,2 +1,11 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>画像投稿ページ</h1>
+
+<%= form_for(@post) do |f| %>
+	<%= f.label :title, "画像のタイトルを入力してね" %>
+	<%= f.text_field :title %>
+
+	<%= f.label :image, "画像選択してね" %>
+	<%= f.file_field :image %>
+
+	<%= f.submit "投稿する" %>
+<% end %>
