@@ -64,6 +64,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-byebug'
+gem 'streamio-ffmpeg'
 
 
 

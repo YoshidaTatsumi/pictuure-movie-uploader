@@ -1,8 +1,17 @@
 <h1>投稿一覧</h1>
 
 <% @posts.each do |post| %>
-	<%= image_tag post.image.to_s, size:"200x200" %>
-	<%= post.title %>
+	<% if post.image.present? %>
+		<%= image_tag post.image.to_s, size:"200x200" %>
+		<%= post.title %>
+
+	<% else %>
+		<%= link_to post_path(post) do %>
+      <%= image_tag(post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+  	<% end %>
+		<%= post.title %>
+	<% end %>
+
 	<% if post.user.id == current_user.id %>
 		<%= link_to "削除", post_path(post), method: :delete %>
 	<% end %>

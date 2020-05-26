@@ -4,8 +4,11 @@
 	<%= f.label :title, "画像のタイトルを入力してね" %>
 	<%= f.text_field :title %>
 
-	<%= f.label :image, "画像選択してね" %>
-	<%= f.file_field :image %>
+	<%= f.label :image, "画像を選択してね" %>
+	<%= f.file_field :image, :accept => 'image/*' %>
+
+	<%= f.label :video, "ビデオを選択してね" %>
+	<%= f.file_field :video, :accept => 'video/*' %>
 
 	<%= f.submit "投稿する" %>
 <% end %>

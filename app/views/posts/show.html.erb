@@ -1,0 +1,5 @@
+<h1><%= @post.title %></h1>
+
+<%= link_to @post.video_url.to_s do %>
+  <%= image_tag(@post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+<% end %>
